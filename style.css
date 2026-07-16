@@ -724,3 +724,29 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     width: 100% !important;
     display: block !important;
 }
+
+
+/* ==========================================================================
+   🎯 CORRECCIÓN: ENCAJONAR Y RECOGER EL TEXTO DE LOS PADRINOS Y PAPÁS
+   ========================================================================== */
+
+/* Limita el ancho de las dedicatorias para que den el salto de línea en el centro */
+#pantalla3 .dedicatoria, 
+#pantalla4 .dedicatoria {
+    width: 82% !important;         /* Evita que el texto se abra hasta las orillas */
+    max-width: 250px !important;   /* Mantiene el bloque compacto estilo poesía */
+    margin-left: auto !important;  /* Centrado perfecto a los lados */
+    margin-right: auto !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+}
+
+/* Recoge los nombres de los padrinos y papás para que guarden simetría */
+#pantalla3 .nombres-reales, 
+#pantalla4 .nombres-reales {
+    width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
