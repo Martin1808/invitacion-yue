@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Estás invitado!</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ✨ NUEVO: Precarga de alta velocidad para evitar saltos secos por imágenes pesadas -->
+    <link rel="preload" href="imagenes/foto2.jpg" as="image">
+    <link rel="preload" href="imagenes/papas.jpg" as="image">
+    <link rel="preload" href="imagenes/fotopadr.jpg" as="image">
+    
+    <!-- URL de Fuentes de Google -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Great+Vibes&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Estás invitado!</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ✨ URL de Fuentes de Google Saneadas y Corregidas Completas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Contenedor Maestro Estricto Móvil -->
+    <div class="contenedor-invitacion">
+
+        <!-- PASO 1: Portada "Cielito Lindo" -->
+        <div class="portada-cielo" id="pantalla1" onclick="irAPantalla(1, 2)">
+            <div class="marco-foto-portada">
+                <img src="imagenes/fotoport.jpg" class="foto-festejada">
+            </div>
+            <div class="contenido-portada">
+                <h1>Yue Regina</h1>
+                <h2>Mi presentación</h2>
+                <div class="nombre-festejada-principal">Yue Regina</div>
+            </div>
+            <p class="instruccion">Toca para descubrir la magia</p>
+        </div>
+
+        <!-- PASO 2: Foto de la Festejada -->
+        <div class="pantalla-foto oculta" id="pantalla2">
+            <div class="marco-foto">
+                <img src="imagenes/foto2.jpg" class="foto-festejada">
+            </div>
+            <p class="dedicatoria">"Guiada por el amor de mis papás y la bendición de Dios, celebro mis primeros 3 años de vida."</p>
+            <button class="boton-siguiente" onclick="irAPantalla(2, 3)">Mis Papás</button>
+        </div>
+
+        <!-- PASO 3: Nueva Animación - Foto con Papás -->
+        <div class="pantalla-foto oculta" id="pantalla3">
+            <div class="marco-foto">
+                <img src="imagenes/papas.jpeg" alt="Con mis papás" class="foto-festejada">
+            </div>
+            <p class="nombres-titulos">Mis Papás👑</p>
+            <p class="nombres-reales">Ivonne Miramontes y Martin Solis</p>
+            <p class="dedicatoria">"Gracias por cuidarme, guiarme y amarme incondicionalmente cada día de mi vida."</p>
+            <button class="boton-siguiente" onclick="irAPantalla(3, 4)">Mis Padrinos</button>
+        </div>
+
+        <!-- PASO 4: Nueva Animación - Foto con Padrinos -->
+        <div class="pantalla-foto oculta" id="pantalla4">
+            <div class="marco-foto">
+                <img src="imagenes/fotopadr.jpg" alt="Con mis padrinos" class="foto-festejada">
+            </div>
+            <p class="nombres-titulos">Mis Padrinos 👑</p>
+            <p class="nombres-reales">Viridiana Solis y Noé Rodriguez</p>
+            <p class="dedicatoria">"Aceptaron con amor el compromiso de acompañarme y ser mis guías en este hermoso camino."</p>
+            <button class="boton-siguiente" onclick="irAPantalla(4, 5)">Detalles del Evento 👑</button>
+        </div>
+
+        <!-- PASO 5: Datos del Evento en 2 Columnas Estilo Línea de Tiempo -->
+        <div class="invitacion oculta" id="pantalla5">
+            <p class="frase-emotiva">
+                "Hace tres años Dios nos bendijo con nuestro pedacito de cielo. Hoy, con el corazón lleno de gratitud, la presentamos ante Él para bendecir su camino."
+            </p>
+            
+            <h1 class="nombre-nina">Sábado 19 de septiembre</h1>
+            <hr class="linea-blanca-separadora">
+
+            <div class="bloque-columnas-evento">
+                <!-- Columna Izquierda: Misa -->
+                <div class="columna-evento">
+                    <h3>Misa</h3>
+                    <div class="circulo-icono-evento">⛪</div> 
+                    <p class="detalles-lugar">Parroquia Cristo Rey y Guadalupe (Tulpetlac)</p>
+                    <p class="hora-evento">1:45 PM</p>
+                    <!-- ✨ Enlace real de Google Maps restaurado -->
+                    <a href="https://maps.app.goo.gl/w18kFDe6Uo1jskss5" target="_blank" class="boton-mapa-columna">
+                        📍 Ubicación
+                    </a>
+                </div>
+
+                <!-- Columna Derecha: Recepción -->
+                <div class="columna-evento">
+                    <h3>Recepción</h3>
+                    <div class="circulo-icono-evento">🏡</div>
+                    <p class="detalles-lugar">Salón Jardín<br>Atenea</p>
+                    <p class="hora-evento">4:00 PM</p>
+                    <!-- ✨ Enlace real de Google Maps restaurado -->
+                    <a href="https://maps.app.goo.gl/ruaKK5VJfvQd6UMSA" target="_blank" class="boton-mapa-columna">
+                        📍 Ubicación
+                    </a>
+                </div>
+            </div>
+
+            <button class="boton-siguiente" style="margin-top: 15px;" onclick="irAPantalla(5, 6)">Confirmar Asistencia</button>
+        </div>
+
+        <!-- PASO 6: NUEVA PANTALLA FINAL -->
+<div class="pantalla-foto oculta" id="pantalla6">
+    <span class="nube" style="font-size: 40px; display: block; margin-bottom: 10px;"></span>
+    <h1 class="nombres-titulos" style="font-size: 22px; margin-bottom: 10px;">¡Te Esperamos!</h1>
+    <p class="dedicatoria" style="font-size: 14px; margin-bottom: 20px;">"Tu presencia hará que este día sea aún más especial para nuestra familia. ¡Gracias por formar parte de nuestra alegría!"</p>
+    
+    <!-- Tu caja de tiempo restante -->
+    <div class="contador-contenedor">
+        <p class="titulo-contador">Tiempo restante:</p>
+        <div id="contador">00d 00h 00m 00s</div>
+    </div>
+
+    <!-- ✨ NUEVA SUGERENCIA DE REGALOS AMOROSA -->
+    <div class="sugerencia-regalos">
+        <p class="titulo-regalos">Sugerencia de Regalos 🎁</p>
+        <p class="detalle-regalos">"Si deseas hacerme un detalle, te agradecería mucho un juguete para seguir divirtiéndome. Gracias por tu amor."</p>
+    </div>
+
+    <!-- Tu botón de WhatsApp -->
+    <a href="https://wa.me" 
+       target="_blank" 
+       class="boton-whatsapp">
+        📲 Confirmar por WhatsApp
+    </a>
+
+    <div class="flores-decoracion" style="position: static; font-size: 24px; margin-top: 25px; opacity: 0.6;"></div>
+</div>
+
+        
+
+
+            <div class="flores-decoracion" style="position: static; font-size: 24px; margin-top: 25px; opacity: 0.6;"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <button id="btn-silencio" onclick="alternarMusica()" style="position: fixed; top: 15px; right: 15px; z-index: 100; border-radius: 50%; width: 40px; height: 40px; padding: 0; background: white; border: 1px solid #dfb372; cursor: pointer; font-size: 18px;">🔊</button>
+
+</body>
+</html>
+

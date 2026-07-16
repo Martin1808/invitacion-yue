@@ -1,0 +1,726 @@
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   1. CONTROL DE LA PANTALLA PRINCIPAL GLOBAL (BODY)
+   ========================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    background-image: url('imagenes/fondo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden; 
+}
+
+/* 🚨 BLINDAJE DE VISIBILIDAD CRÍTICO: Elimina físicamente las tarjetas apagadas por tu JS */
+.oculta,
+#pantalla1.oculta, #pantalla2.oculta, #pantalla3.oculta, 
+#pantalla4.oculta, #pantalla5.oculta, #pantalla6.oculta {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important; 
+}
+
+/* ==========================================================================
+   2. CONTENEDOR MAESTRO DE DISEÑO MÓVIL
+   ========================================================================== */
+.contenedor-invitacion {
+    width: 100%;
+    max-width: 360px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* ==========================================================================
+   3. CONFIGURACIÓN INDIVIDUAL DE LAS TARJETAS (PANTALLA GIGANTE FIJA)
+   ========================================================================== */
+.portada-cielo, 
+.pantalla-foto, 
+.invitacion {
+    /* ✨ SOLUCIÓN: Subimos de 320px a 340px fijos para abarcar casi toda la pantalla móvil */
+    width: 340px !important;       
+    min-height: 540px;
+    height: auto;
+    border-radius: 20px;
+    position: relative !important; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border: 3px solid #ffffff;     
+    padding: 35px 25px !important; /* Mantenemos un colchón interno seguro */
+    box-sizing: border-box;
+    overflow: hidden !important;   
+    color: #ffffff !important; 
+    
+    background-image: url('imagenes/Fondoult.jpeg') !important;
+    background-color: #c9828c !important; 
+    background-repeat: no-repeat !important;  
+    background-size: 100% 100% !important;    
+    background-position: center !important;   
+}
+
+/* Enciende el flexbox y fuerza a que todo el contenido se alinee verticalmente al medio */
+.portada-cielo:not(.oculta), 
+.pantalla-foto:not(.oculta), 
+.invitacion:not(.oculta) {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important; 
+    gap: 12px !important;
+    align-items: center !important; /* Centra todos los bloques en el eje horizontal */
+    text-align: center !important;  /* Centra todos los textos en el eje horizontal */
+}
+
+
+/* ==========================================================================
+   4. MARCOS DE LAS FOTOS E IMÁGENES (ESTILO MINIMALISTA BLANCO)
+   ========================================================================== */
+.marco-foto-portada {
+    width: 120px; 
+    height: 120px;
+    margin: 10px auto 5px auto !important;
+    border-radius: 50% !important; 
+    border: 3px solid #ffffff;     /* Saneado: Cambiado de rosa a blanco */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12); 
+    overflow: hidden;
+}
+
+.marco-foto {
+    width: 150px;
+    height: 200px; 
+    margin: 5px auto 5px auto !important;
+    border-radius: 100px 100px 15px 15px !important; 
+    border: 3px solid #ffffff;     /* Saneado: Cambiado de dorado a blanco */
+    overflow: hidden;
+}
+
+.foto-festejada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important; 
+    object-position: center; 
+}
+
+/* ==========================================================================
+   5. FUENTES CLONADAS DE LA REFERENCIA (TEXTOS EN BLANCO)
+   ========================================================================== */
+.contenido-portada {
+    width: 100%;
+    margin: 0 auto !important;
+}
+
+/* ==========================================================================
+   🎯 AJUSTE DE PORTADA: LETRERO MINI Y NOMBRE EN EL CENTRO
+   ========================================================================== */
+
+/* 1. Ocultamos el H1 "Cielito Lindo" si no quieres que aparezca arriba */
+.contenido-portada h1 {
+    display: none !important;
+}
+
+/* 2. Letrero "Mi Presentación" más pequeño y con letras separadas (Estilo máquina) */
+.contenido-portada h2 {
+    font-family: 'Courier Prime', 'Courier New', monospace !important;
+    font-size: 11px !important;       /* ✨ Cambiado: Letra miniatura y elegante */
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 4px !important;    /* Espaciado fino entre letras */
+    text-shadow: none !important;
+    font-weight: normal !important;
+    
+    margin-top: 55px !important;       /* ✨ Cambiado: Empuja el letrero más abajo alejándolo de la foto */
+    margin-bottom: 25px !important;    /* Separa el letrero del nombre de abajo */
+}
+
+/* 3. Nombre "Yue Regina" más abajo, limpio, gigante y minimalista */
+.nombre-festejada-principal {
+    font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif !important; /* Tipografía limpia y delgada */
+    font-size: 34px !important;        /* Tamaño grande destacado */
+    font-weight: 300 !important;       /* Trazo ultra fino moderno */
+    color: #ffffff !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: none !important;
+    
+    margin-top: 0px !important;
+    margin-bottom: 40px !important;    /* ✨ Cambiado: Empuja el nombre más abajo hacia el centro libre */
+}
+
+.nombres-reales {
+    font-size: 20px !important;
+    width: 85% !important;
+}
+
+/* Texto inferior de la portada (Subido al centro libre) */
+.instruccion {
+    font-family: 'Courier Prime', 'Courier New', monospace !important;
+    font-size: 11px !important;
+    color: #ffffff !important; 
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    text-shadow: none !important;
+    text-align: center !important;
+    
+    width: 80% !important;
+    /* ✨ SOLUCIÓN: Cambiamos de 15px a 70px para obligarlo a subir y alejarse del marco */
+    margin: auto auto 70px auto !important; 
+}
+
+
+/* Bloques de prosa explicativa */
+.dedicatoria, .frase-emotiva {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-family: 'Quicksand', sans-serif !important;
+    font-size: 13px !important; 
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+    width: 82% !important;
+    margin: 5px auto !important;
+}
+
+/* ==========================================================================
+   6. CONFIGURACIÓN DE LA PANTALLA DE DETALLES (2 COLUMNAS ESTILO LINEA DE TIEMPO)
+   ========================================================================== */
+.linea-blanca-separadora {
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.4) !important;
+    width: 75% !important;
+    margin: 2px auto 10px auto !important;
+}
+
+.bloque-columnas-evento {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-bottom: 5px !important;
+}
+
+.columna-evento {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.columna-evento h3 {
+    font-family: 'Courier Prime', 'Courier New', monospace !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    margin: 0 0 5px 0 !important;
+}
+
+.circulo-icono-evento {
+    width: 44px !important;
+    height: 44px !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
+}
+
+.columna-evento .detalles-lugar {
+    font-family: 'Quicksand', sans-serif !important;
+    font-size: 10.5px !important;
+    font-weight: 400 !important;
+    line-height: 1.25 !important;
+    min-height: 40px !important;
+    margin: 0 0 4px 0 !important;
+}
+
+.columna-evento .hora-evento {
+    font-family: 'Courier Prime', monospace !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    margin: 0 0 8px 0 !important;
+}
+
+.boton-mapa-columna {
+    display: inline-block !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    padding: 5px 8px !important;
+    font-family: 'Courier Prime', monospace !important;
+    font-size: 9px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    border-radius: 15px !important;
+    width: 95% !important;
+    box-sizing: border-box !important;
+}
+
+/* Ajustes específicos de balance para Pantalla 5 */
+#pantalla5 .frase-emotiva { margin-top: 15px !important; margin-bottom: 5px !important; }
+#pantalla5 .nombre-nina { font-size: 24px !important; margin: 5px 0 2px 0 !important; }
+
+/* ==========================================================================
+   7. CONTADOR REGRESIVO MINIATURA DORADO PREMIUM (PANTALLA 6)
+   ========================================================================== */
+.contador-contenedor {
+    background: linear-gradient(135deg, #dfb372 0%, #c5a059 100%) !important; 
+    border: 1px solid #b38d46 !important; 
+    border-radius: 12px !important;
+    padding: 12px 8px 8px 8px !important; 
+    margin: 0 auto 15px auto !important;     
+    box-shadow: 0 4px 12px rgba(197, 160, 89, 0.2) !important; 
+    width: 80% !important;                   
+    max-width: 230px !important;             
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+.contador-contenedor::before {
+    content: "─ ❀ ─ ❁ ─ ❀ ─" !important;
+    position: absolute !important;
+    top: -9px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background-color: #dfb372 !important; 
+    border-radius: 8px !important;
+    padding: 1px 8px !important;
+    font-size: 9px !important;              
+    color: #ffffff !important; 
+    font-family: 'Georgia', serif !important;
+}
+
+.titulo-contador {
+    font-family: 'Georgia', serif !important;
+    font-size: 11px !important;              
+    text-transform: uppercase !important;
+color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !important;font-style: italic !important;}#contador {font-family: 'Courier Prime', monospace !important;font-size: 15px !important;font-weight: bold !important;color: #1B365D !important;display: inline-block !important;border-top: 1px double #ffffff !important;border-bottom: 1px double #ffffff !important;padding: 3px 8px 2px 8px !important;background-color: rgba(255, 255, 255, 0.88) !important;border-radius: 5px !important;}/* ==========================================================================8. BOTONES ESTILIZADOS EN CRISTAL Y ACCESOS DISCRETOS========================================================================== */.boton-siguiente {background-color: transparent !important;color: #ffffff !important;border: 1.5px solid #ffffff !important;padding: 10px 20px !important;font-family: 'Courier Prime', monospace !important;font-size: 11px !important;text-transform: uppercase !important;letter-spacing: 2px !important;border-radius: 25px !important;width: 85% !important;cursor: pointer !important;margin-top: auto !important;margin-bottom: 15px !important;}.boton-whatsapp {display: inline-flex !important;justify-content: center !important;align-items: center !important;gap: 6px !important;background: transparent !important;color: #20ba5a !important;font-family: 'Courier Prime', monospace !important;font-size: 11px !important;font-weight: bold !important;border-radius: 20px !important;text-decoration: none !important;padding: 7px 14px !important;width: auto !important;max-width: 80% !important;border: 1px solid #20ba5a !important;margin: 5px auto 10px auto !important;}/* Ajustes de compactación para Papás y Padrinos */#pantalla2 .boton-siguiente, #pantalla3 .boton-siguiente, #pantalla4 .boton-siguiente {margin-bottom: 30px !important;}/* ==========================================================================9. ANIMACIONES DE TRANSICIÓN LENTA SUAVE========================================================================== */@keyframes disolucionLentaEntrada {from { opacity: 0; filter: blur(6px); transform: scale(0.98); }to { opacity: 1; filter: blur(0px); transform: scale(1); }}@keyframes disolucionLentaSalida {from { opacity: 1; filter: blur(0px); }to { opacity: 0; filter: blur(3px); transform: scale(1.01); }}.portada-cielo:not(.oculta), .pantalla-foto:not(.oculta), .invitacion:not(.oculta) {animation: disolucionLentaEntrada 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;}.animacion-salir {animation: disolucionLentaSalida 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;}
+
+
+
+/* ==========================================================================
+   🎯 REGLA DE INYECCIÓN DIRECTA: SUBIR EL BOTÓN "MIS PAPÁS" (PANTALLA 2)
+   ========================================================================== */
+#pantalla2 .boton-siguiente {
+    margin-top: 15px !important;    /* Espacio controlado debajo del texto */
+    margin-bottom: 95px !important; /* ✨ Fuerza al botón a subir hacia la zona limpia */
+}
+
+
+/* ==========================================================================
+   🎯 COMPACTAR TEXTOS Y ELEVAR EL BOTÓN EN LA PANTALLA DE PAPÁS (PANTALLA 3)
+   ========================================================================== */
+
+/* 1. Junta el título "Mis Papás 👑" hacia la foto familiar */
+#pantalla3 .nombres-titulos {
+    margin-top: 5px !important;
+    margin-bottom: 2px !important;
+}
+
+/* 2. Acerca los nombres de los papás en texto grande hacia el título */
+#pantalla3 .nombres-reales {
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+    font-size: 19px !important; /* Ajuste milimétrico para que quepa perfecto */
+}
+
+/* 3. Comprime y acerca la dedicatoria hacia los nombres */
+#pantalla3 .dedicatoria {
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+/* 4. Fuerza al botón "MIS PADRINOS" a subir a la zona despejada */
+#pantalla3 .boton-siguiente {
+    margin-top: 5px !important;
+    margin-bottom: 95px !important; /* Colchón de aire para subirlo del marco */
+}
+
+
+/* ==========================================================================
+   🎯 COMPACTAR TEXTOS Y ELEVAR EL BOTÓN EN PADRINOS (PANTALLA 4)
+   ========================================================================== */
+
+/* 1. Junta el título "Mis Padrinos 👑" hacia el arco de la foto */
+#pantalla4 .nombres-titulos {
+    margin-top: 5px !important;
+    margin-bottom: 2px !important;
+}
+
+/* 2. Acerca los nombres de los padrinos hacia el título superior */
+#pantalla4 .nombres-reales {
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+    font-size: 19px !important; /* Equilibrio tipográfico idéntico a la pantalla de papás */
+}
+
+/* 3. Comprime el espacio de la dedicatoria en el centro */
+#pantalla4 .dedicatoria {
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+/* 4. Eleva con fuerza el botón "DETALLES DEL EVENTO" hacia el centro libre */
+#pantalla4 .boton-siguiente {
+    margin-top: 5px !important;
+    margin-bottom: 95px !important; /* Mismo colchón de aire de 95px para simetría total */
+}
+
+
+/* ==========================================================================
+   🎯 EQUILIBRIO DE COLUMNAS Y ELEVACIÓN DE BOTÓN EN DETALLES (PANTALLA 5)
+   ========================================================================== */
+
+/* 1. Mueve y equilibra el bloque completo de las columnas hacia la derecha */
+#pantalla5 .bloque-columnas-evento {
+    width: 100% !important;
+    padding-left: 12px !important;  /* ✨ Desplaza suavemente todo el bloque a la derecha */
+    padding-right: 4px !important;  /* Evita que la recepción choque con el borde derecho */
+    box-sizing: border-box !important;
+    gap: 15px !important;            /* Mantiene una separación sana entre ambos lados */
+}
+
+/* 2. Ajuste fino para que el texto largo de la Misa no roce las flores izquierdas */
+#pantalla5 .columna-evento:first-child .detalles-lugar {
+    padding-left: 5px !important;   /* Separa las letras del borde floral izquierdo */
+    width: 95% !important;
+}
+
+/* 3. Fuerza al botón "CONFIRMAR ASISTENCIA" a subir al nivel de los anteriores */
+#pantalla5 .boton-siguiente {
+    margin-top: 15px !important;    /* Espacio controlado debajo de los botones de mapas */
+    margin-bottom: 95px !important; /* ✨ Mismo colchón de 95px para simetría visual perfecta */
+}
+
+
+
+/* ==========================================================================
+   🎯 UNIFICACIÓN ESTÍTICA DE LA PANTALLA FINAL (PANTALLA 6)
+   ========================================================================== */
+
+/* 1. Transforma el botón de WhatsApp al estilo de cristal blanco y máquina de escribir */
+#pantalla6 .boton-whatsapp {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    
+    /* Cambiado de verde a fondo transparente de cristal con borde blanco fino */
+    background: transparent !important; 
+    color: #ffffff !important; /* Texto en blanco puro */
+    border: 1.5px solid #ffffff !important; 
+    border-radius: 25px !important; /* Bordes redondeados elegantes a juego */
+    
+    /* Tipografía idéntica a tus otros botones maestros */
+    font-family: 'Courier Prime', 'Courier New', monospace !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important; /* Pasa el texto automáticamente a mayúsculas */
+    letter-spacing: 2px !important;       /* Espaciado fino entre letras */
+    text-decoration: none !important;
+    
+    /* Medidas y márgenes para centrarlo y elevarlo */
+    padding: 12px 25px !important; 
+    width: 85% !important; 
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    
+    /* ✨ Colchón inferior de 95px para que quede exactamente a la misma altura que los anteriores */
+    margin: 15px auto 95px auto !important; 
+    transition: background-color 0.2s ease !important;
+}
+
+/* Pequeño destello brillante de cristal al pulsarlo con el dedo */
+#pantalla6 .boton-whatsapp:active {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    transform: scale(0.98) !important;
+}
+
+/* 2. Compacta el espacio muerto debajo del contador dorado para que todo suba en bloque */
+#pantalla6 .contador-contenedor {
+    margin-bottom: 5px !important; /* Reduce la separación con el botón de WhatsApp */
+}
+
+
+/* ==========================================================================
+   🎯 ESTILO CRISTAL MINIMALISTA PARA EL CONTADOR (MISMAS REGLAS DE WHATSAPP)
+   ========================================================================== */
+#pantalla6 .contador-contenedor {
+    /* ✨ Cambiado: De fondo dorado satinado a totalmente transparente */
+    background: transparent !important; 
+    border: 1.5px solid #ffffff !important; /* Línea blanca fina idéntica al botón */
+    border-radius: 25px !important;         /* Mismo redondeado suave del botón de WhatsApp */
+    padding: 15px 10px 12px 10px !important;
+    margin: 0 auto 15px auto !important;     
+    box-shadow: none !important;            /* Eliminadas sombras doradas pesadas */
+    width: 85% !important;                  /* Mismo ancho exacto que el botón de WhatsApp (85%) */
+    max-width: 280px !important;            
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+/* Remates florales del contador pasados a blanco puro para integrarse al cristal */
+#pantalla6 .contador-contenedor::before {
+    content: "─ ❀ ─ ❁ ─ ❀ ─" !important;
+    position: absolute !important;
+    top: -9px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background-color: #c9828c !important; /* Forzamos a usar el mismo color rosa de fondo de la tarjeta */
+    border-radius: 8px !important;
+    padding: 1px 8px !important;
+    font-size: 9px !important;              
+    color: #ffffff !important;            /* Flores en blanco puro */
+    font-family: 'Georgia', serif !important;
+}
+
+/* Cambiado el remate de abajo del contador */
+#pantalla6 .contador-contenedor::after {
+    content: "❦" !important;
+    position: absolute !important;
+    bottom: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background-color: #c9828c !important; /* Mismo color rosa de fondo */
+    border-radius: 50% !important;
+    padding: 0 5px !important;
+    font-size: 10px !important;
+    color: #ffffff !important;            /* Icono en blanco */
+    font-family: 'Georgia', serif !important;
+}
+
+/* Texto superior: TIEMPO RESTANTE (Letras separadas de máquina) */
+#pantalla6 .titulo-contador {
+    font-family: 'Courier Prime', 'Courier New', monospace !important;
+    font-size: 11px !important;              
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;          /* Misma separación que el botón de WhatsApp */
+    color: #ffffff !important;             /* Cambiado a blanco puro */
+    margin: 0 0 5px 0 !important;
+    font-weight: bold !important;
+    font-style: normal !important;          /* Cambiado de cursiva a normal para unificar estilo */
+    text-shadow: none !important;
+}
+
+/* Números del contador dinámico */
+#pantalla6 #contador {
+    font-family: 'Courier Prime', 'Courier New', monospace !important; /* Misma fuente que el botón de WhatsApp */
+    font-size: 15px !important;              
+    font-weight: bold !important;
+    color: #ffffff !important;             /* ✨ Cambiado: Letras y números en color blanco puro */
+    letter-spacing: 0.5px !important;
+    word-spacing: 1px !important;
+    display: inline-block !important;
+    border: none !important;                /* Eliminadas las líneas dobles antiguas */
+    padding: 2px 0 0 0 !important;
+    margin-top: 0px !important;
+    background-color: transparent !important; /* ✨ Eliminada la placa blanca interna para efecto cristal translúcido */
+    border-radius: 0px !important;
+}
+
+
+/* ==========================================================================
+   🎯 AJUSTE DE ESPACIOS Y TAMAÑO EN DETALLES DEL EVENTO (PANTALLA 5)
+   ========================================================================== */
+
+/* 1. Genera un espacio superior amplio para bajar todo el contenido en bloque */
+#pantalla5 .frase-emotiva { 
+    margin-top: 50px !important;    /* ✨ Aumentado para empujar la frase hacia abajo */
+    margin-bottom: 8px !important; 
+}
+
+/* 2. Hace más pequeña y fina la etiqueta "Mis 3 Añitos" */
+#pantalla5 .nombre-nina { 
+    font-size: 15px !important;    /* ✨ Reducido de 24px a 19px para un estilo más delicado */
+    font-weight: 400 !important;   /* Trazo más estilizado */
+    letter-spacing: 1px !important;
+    margin: 4px 0 2px 0 !important; 
+}
+
+/* 3. Reajusta la línea separadora fina debajo del título corto */
+#pantalla5 .linea-blanca-separadora { 
+    margin: 2px auto 15px auto !important; 
+    width: 60px !important; /* Un poco más compacta para que combine con el título mini */
+}
+
+/* ==========================================================================
+   🎯 AJUSTE DE TAMAÑO MINI PARA LA FRASE EMOTIVA (PANTALLA 5)
+   ========================================================================== */
+#pantalla5 .frase-emotiva { 
+    font-size: 11px !important;    /* ✨ Reducido para un estilo fino y minimalista */
+    line-height: 1.25 !important;  /* Interlineado más compacto y estilizado */
+    width: 85% !important;         /* Controla el ancho para que no toque los lados */
+    margin-top: 45px !important;   /* Mantiene el empuje hacia abajo que ya habías aprobado */
+    margin-bottom: 5px !important; 
+}
+
+
+/* ==========================================================================
+   🎯 OPTIMIZACIÓN DE FOTO: MÁS GRANDE Y MÁS ABAJO EN LA PORTADA
+   ========================================================================== */
+#pantalla1 .marco-foto-portada {
+    width: 200px !important;        /* ✨ Aumentado de 120px a 140px para que luzca más grande */
+    height: 200px !important;       /* Mantiene el círculo perfecto */
+    margin-top: 60px !important;    /* ✨ Aumentado para bajar la foto de las flores superiores */
+    margin-bottom: -30px !important; /* Espacio de cortesía con el texto inferior */
+    
+    /* Mantiene los bordes blancos y las sombras nítidas de tu diseño */
+    border-radius: 50% !important; 
+    border: 3px solid #ffffff !important; 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12) !important;
+}
+
+
+/* ==========================================================================
+   ✨ SISTEMA DE TRANSICIÓN PREMIUM UNIFICADO PARA TODAS LAS TARJETAS
+   ========================================================================== */
+
+/* Se aplica a absolutamente todas las tarjetas cuando se vuelven activas */
+#pantalla1:not(.oculta), #pantalla2:not(.oculta), #pantalla3:not(.oculta), 
+#pantalla4:not(.oculta), #pantalla5:not(.oculta), #pantalla6:not(.oculta) {
+    will-change: opacity, filter !important;
+    transform: none !important; /* Eliminamos movimientos de desplazamiento para evitar parpadeos de carga */
+    animation: disolucionPerfectaEntrada 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+/* Se aplica a la tarjeta que tu JavaScript oculta lenta y pausadamente */
+.animacion-salir,
+#pantalla1.animacion-salir, #pantalla2.animacion-salir, #pantalla3.animacion-salir,
+#pantalla4.animacion-salir, #pantalla5.animacion-salir, #pantalla6.animacion-salir {
+    will-change: opacity, filter !important;
+    transform: none !important;
+    animation: disolucionPerfectaSalida 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+/* Clones exactos de desvanecimiento cruzado (Crossfade puro de Pinterest) */
+@keyframes disolucionPerfectaEntrada {
+    from {
+        opacity: 0;
+        filter: blur(4px); /* Suave desenfoque inicial */
+    }
+    to {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes disolucionPerfectaSalida {
+    from {
+        opacity: 1;
+        filter: blur(0px);
+    }
+    to {
+        opacity: 0;
+        filter: blur(2px);
+    }
+}
+
+
+/* ==========================================================================
+   🎯 ESTILO PREMIUM PARA LA SUGERENCIA DE REGALOS (PANTALLA 6)
+   ========================================================================== */
+.sugerencia-regalos {
+    width: 82% !important;
+    margin: 10px auto 15px auto !important; /* Centrado con espacio equilibrado */
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+/* Encabezado en estilo máquina de escribir espaciada */
+.sugerencia-regalos .titulo-regalos {
+    font-family: 'Courier Prime', 'Courier New', monospace !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    font-weight: bold !important;
+}
+
+/* Frase aclaratoria en letra fina y cursiva elegante */
+.sugerencia-regalos .detalle-regalos {
+    font-family: 'Georgia', serif !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    color: rgba(255, 255, 255, 0.9) !important; /* Blanco sutil traslúcido */
+    font-style: italic !important;
+    margin: 0 !important;
+}
+
+
+/* ==========================================================================
+   🎯 DESAMONTONAR Y DISTRIBUIR ESPACIOS (PANTALLA 6)
+   ========================================================================== */
+
+/* 1. Reduce el espacio muerto inferior del botón de WhatsApp para ganar aire */
+#pantalla6 .boton-whatsapp {
+    margin-top: 10px !important;    /* Separa sutilmente el botón de los regalos */
+    margin-bottom: 30px !important; /* ✨ Cambiado: Bajó de 95px a 30px para que la tarjeta respire abajo */
+}
+
+/* 2. Separa el contador de la dedicatoria de arriba */
+#pantalla6 .contador-contenedor {
+    margin-top: 5px !important;
+    margin-bottom: 20px !important; /* ✨ Aumentado para despegarlo de la sugerencia de regalos */
+}
+
+/* 3. Dale un espacio uniforme al bloque de los regalos en el centro */
+#pantalla6 .sugerencia-regalos {
+    margin-top: 0px !important;
+    margin-bottom: 20px !important; /* ✨ Genera un aire sano antes de llegar al botón de WhatsApp */
+}
+
+
+/* ==========================================================================
+   🎯 AJUSTE DE ENCUADRE: ENFOCAR ROSTROS EN LOS ARCOS DE LAS FOTOS
+   ========================================================================== */
+.foto-festejada {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+    
+    /* ✨ SOLUCIÓN: Enfoca la imagen desde la parte superior para que bajen los rostros y no se corten */
+    object-position: center top !important; 
+}
+
+
+/* ==========================================================================
+   🎯 CALIBRACIÓN INTERNA: DESLIZAR LA FOTO HACIA ABAJO DENTRO DEL ARCO
+   ========================================================================== */
+.marco-foto .foto-festejada {
+    /* ✨ Ajuste fino: Mueve el encuadre vertical un 12% hacia abajo para despegar los rostros del borde */
+    object-position: center -25% !important; 
+}
+
+
+/* ==========================================================================
+   🎯 REGLA DE ALINEACIÓN UNIVERSAL CENTRAL ANTI-DESAJUSTES
+   ========================================================================== */
+.contenido-portada, 
+.sugerencia-regalos, 
+.contador-contenedor,
+.bloque-columnas-evento {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+#pantalla1 h1, #pantalla1 h2, .nombre-festejada-principal, 
+.nombres-titulos, .nombres-reales, .dedicatoria, .frase-emotiva {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+}
