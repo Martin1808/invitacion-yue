@@ -750,3 +750,43 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     margin-right: auto !important;
     text-align: center !important;
 }
+
+
+/* ==========================================================================
+   🎯 BLINDAJE TOTAL: RECOGER TEXTOS EN PANTALLAS 2, 3 Y 4
+   ========================================================================== */
+
+/* 1. Encajona los títulos "Mis Papás" y "Mis Padrinos" */
+#pantalla3 .nombres-titulos, 
+#pantalla4 .nombres-titulos {
+    display: block !important;
+    width: 75% !important;
+    max-width: 230px !important;
+    margin: 5px auto 2px auto !important; /* Centrado absoluto */
+    text-align: center !important;
+}
+
+/* 2. Encajona los nombres reales (Ivonne, Martin, Viridiana, Noé) en las tarjetas 3 y 4 */
+#pantalla3 .nombres-reales, 
+#pantalla4 .nombres-reales {
+    display: block !important;
+    width: 78% !important;          /* Lo encoge para dejar libre el marco floral lateral */
+    max-width: 240px !important;    
+    margin: 0 auto 5px auto !important; 
+    font-size: 17px !important;     /* Tamaño ideal para que dé un salto de línea limpio */
+    line-height: 1.3 !important;
+    text-align: center !important;
+}
+
+/* 3. Encajona las dedicatorias en las tarjetas 2, 3 y 4 */
+#pantalla2 .dedicatoria, 
+#pantalla3 .dedicatoria, 
+#pantalla4 .dedicatoria {
+    display: block !important;
+    width: 75% !important;          /* Corta los enunciados largos antes de que toquen el marco */
+    max-width: 230px !important;    
+    margin: 5px auto 15px auto !important; 
+    font-size: 12.5px !important;   /* Letra fina estilo poesía */
+    line-height: 1.4 !important;
+    text-align: center !important;
+}
