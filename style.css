@@ -790,3 +790,54 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     line-height: 1.4 !important;
     text-align: center !important;
 }
+
+
+/* ==========================================================================
+   🎯 CORRECCIÓN DEFINITIVA PARA LA PANTALLA DE DETALLES (PANTALLA 5)
+   ========================================================================== */
+
+/* 1. Encajona la frase emotiva de arriba para que no toque las flores */
+#pantalla5 .frase-emotiva {
+    display: block !important;
+    width: 75% !important;          /* Recoge el texto al centro limpio */
+    max-width: 240px !important;
+    margin: 45px auto 10px auto !important; /* Centrado perfecto horizontal */
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+}
+
+/* 2. Recoge y encajona el bloque de las dos columnas (Misa y Recepción) */
+#pantalla5 .bloque-columnas-evento {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 78% !important;          /* ✨ SOLUCIÓN: Encoge las dos columnas hacia el centro */
+    max-width: 250px !important;    /* Evita que se abran de más en celulares anchos */
+    margin: 0 auto 10px auto !important; /* Centrado absoluto en la zona rosa */
+    gap: 15px !important;
+}
+
+/* 3. Ajuste de tamaño fino para que las palabras quepan en sus columnas compactas */
+#pantalla5 .columna-evento h3 {
+    font-size: 12px !important;     /* Hace un poquito más chicos los títulos MISA y RECEPCIÓN */
+    letter-spacing: 2px !important;
+}
+
+#pantalla5 .columna-evento .detalles-lugar {
+    font-size: 10px !important;      /* Ajusta los nombres de la iglesia y salón */
+    line-height: 1.2 !important;
+    min-height: 38px !important;
+}
+
+#pantalla5 .columna-evento .hora-evento {
+    font-size: 12px !important;      /* Ajusta el tamaño de las horas */
+    margin-bottom: 5px !important;
+}
+
+/* 4. Hace un poco más delgados los dos botones de UBICACIÓN para que no choquen */
+#pantalla5 .boton-mapa-columna {
+    width: 100% !important;
+    padding: 4px 5px !important;
+    font-size: 8.5px !important;
+}
