@@ -841,3 +841,19 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     padding: 4px 5px !important;
     font-size: 8.5px !important;
 }
+
+/* ==========================================================================
+   🎯 AJUSTE DE TAMAÑO: TÍTULOS H1 MÁS PEQUEÑOS Y ELEGANTES
+   ========================================================================== */
+.portada-cielo h1, 
+.pantalla-foto h1, 
+.invitacion h1,
+h1 {
+    /* ✨ SOLUCIÓN: Ajustamos el tamaño a 22px para que luzca fino y no sature la tarjeta */
+    font-size: 22px !important; 
+    font-weight: 400 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.2 !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
