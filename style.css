@@ -945,4 +945,12 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
 }
 
 
+/* ==========================================================================
+   🎯 SOLUCIÓN DE FUERZA PARA PANTALLA 3: BAJAR FOTO CON PÍXELES FIJOS
+   ========================================================================= */
+#pantalla3 img.foto-festejada,
+#pantalla3 .foto-festejada {
+    /* ✨ SOLUCIÓN: Usamos 30px fijos para obligar a la foto vertical a deslizarse hacia abajo */
+    object-position: center 30px !important; 
+}
 
