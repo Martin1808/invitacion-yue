@@ -925,51 +925,5 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
 
 
 
-/* ==========================================================================
-   🎯 AJUSTE DE ENCUADRE INDIVIDUAL CORREGIDO PARA TARJETAS 2 Y 3
-   ========================================================================== */
-
-/* Fuerza a la foto de la nena sola (Pantalla 2) a subir y rellenar todo el arco */
-#pantalla2 img.foto-festejada,
-#pantalla2 .foto-festejada {
-    object-position: center center !important;
-}
-
-/* ==========================================================================
-   🎯 CALIBRACIÓN EXCLUSIVA: BAJAR UN POCO LAS CARAS EN LA TARJETA 3
-   ========================================================================== */
-#pantalla3 img.foto-festejada,
-#pantalla3 .foto-festejada {
-    /* ✨ SOLUCIÓN: Cambiamos de 12% a 35% para deslizar la foto hacia abajo y centrar los rostros */
-    object-position: center 35% !important;
-}
 
 
-/* ==========================================================================
-   🎯 SOLUCIÓN DE FUERZA PARA PANTALLA 3: BAJAR FOTO CON PÍXELES FIJOS
-   ========================================================================= */
-#pantalla3 img.foto-festejada,
-#pantalla3 .foto-festejada {
-    /* ✨ SOLUCIÓN: Usamos 30px fijos para obligar a la foto vertical a deslizarse hacia abajo */
-    object-position: center 30px !important; 
-}
-
-/* ==========================================================================
-   🎯 SOLUCIÓN DEFINITIVA: FORZAR APARICIÓN Y ENCUADRE DE FOTO DE PAPÁS
-   ========================================================================== */
-#pantalla3 .marco-foto {
-    position: relative !important;
-    overflow: hidden !important;
-    background-color: transparent !important;
-}
-
-#pantalla3 .foto-festejada {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    
-    /* 🚀 TRUCO MAESTRO: Desplaza el encuadre hacia abajo de forma física */
-    object-position: center top !important; 
-    transform: scale(1.15) translateY(18px) !important; 
-}
