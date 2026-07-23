@@ -846,8 +846,8 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
 /* ==========================================================================
    🎯 AJUSTE DE PORTADA: MINIATURIZAR EL LETRERO "MI PRESENTACIÓN"
    ========================================================================== */
-#pantalla1 h2,
-.contenido-portada h2 {
+#pantalla1 h1,
+.contenido-portada h1 {
     font-family: 'Courier Prime', 'Courier New', monospace !important; /* Fuente estilo máquina */
     font-size: 11px !important;       /* ✨ SOLUCIÓN: Letra miniatura súper elegante */
     font-weight: normal !important;   /* Trazo delgado, elimina el sombreado grueso */
