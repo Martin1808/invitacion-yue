@@ -906,3 +906,20 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     line-height: 1.35 !important;
 }
 
+
+/* ==========================================================================
+   🎯 CORRECCIÓN DE ENCUADRE: CORREGIR FOTO DESPLAZADA EN PASO 2
+   ========================================================================== */
+
+/* Regresa la foto individual de la nena a su centro vertical perfecto */
+#pantalla2 .marco-foto .foto-festejada {
+    /* ✨ SOLUCIÓN: Centra la foto verticalmente para que rellene la cúpula por completo */
+    object-position: center center !important; 
+}
+
+/* Mantiene el ajuste exclusivo para que las fotos de papás y padrinos no se corten */
+#pantalla3 .marco-foto .foto-festejada,
+#pantalla4 .marco-foto .foto-festejada {
+    object-position: center 12% !important;
+}
+
