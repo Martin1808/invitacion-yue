@@ -924,6 +924,18 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
 }
 
 
+/* ==========================================================================
+   🎯 CORRECCIÓN QUIRÚRGICA: BAJAR ENCUADRE DE LA FOTO EN PANTALLA 3
+   ========================================================================== */
+#pantalla3 .foto-festejada {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    
+    /* ✨ SOLUCIÓN: Empuja la imagen completa 22 píxeles hacia abajo para que no se corten las frentes */
+    transform: translateY(22px) !important; 
+}
 
 
 
