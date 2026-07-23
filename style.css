@@ -954,3 +954,18 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     object-position: center 30px !important; 
 }
 
+/* ==========================================================================
+   🎯 REENCUADRE MATEMÁTICO: ENFOQUE DE ROSTROS EN LA FOTO DE LOS PAPÁS
+   ========================================================================== */
+#pantalla3 .marco-foto {
+    display: flex !important;
+    align-items: flex-start !important; /* Desplaza el contenido al ras superior */
+    justify-content: center !important;
+}
+
+#pantalla3 .foto-festejada {
+    width: 100% !important;
+    height: auto !important;           /* ✨ Al poner altura automática, la foto se encoge al ancho */
+    min-height: 100% !important;       /* Mantiene cubierto el arco blanco */
+    transform: translateY(20px) !important; /* 🚀 TRUCO MAESTRO: Empuja la imagen física 20 píxeles hacia abajo */
+}
