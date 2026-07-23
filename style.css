@@ -923,3 +923,20 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     object-position: center 12% !important;
 }
 
+
+
+/* ==========================================================================
+   🎯 AJUSTE DE ENCUADRE INDIVIDUAL CORREGIDO PARA TARJETAS 2 Y 3
+   ========================================================================== */
+
+/* Fuerza a la foto de la nena sola (Pantalla 2) a subir y rellenar todo el arco */
+#pantalla2 img.foto-festejada,
+#pantalla2 .foto-festejada {
+    object-position: center center !important;
+}
+
+/* Fuerza a la foto con los papás (Pantalla 3) a centrarse en los rostros de forma perfecta */
+#pantalla3 img.foto-festejada,
+#pantalla3 .foto-festejada {
+    object-position: center 12% !important; /* Si notas que aún se ve baja, puedes probar con center top */
+}
