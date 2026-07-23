@@ -863,4 +863,46 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
 }
 
 
+/* ==========================================================================
+   🎯 COMPACTAR TEXTOS Y PROTEGER MARCOS EN LA PANTALLA FINAL (PANTALLA 6)
+   ========================================================================== */
+
+/* 1. Reduce y encajona la dedicatoria de arriba "Tu presencia hará..." */
+#pantalla6 .dedicatoria {
+    display: block !important;
+    width: 75% !important;          /* Corta el texto mucho antes de las flores */
+    max-width: 240px !important;
+    margin: 5px auto 15px auto !important; /* Centrado perfecto horizontal */
+    font-size: 11.5px !important;   /* Letra un poco más pequeña y delicada */
+    line-height: 1.35 !important;
+    text-align: center !important;
+}
+
+/* 2. Hace más chico el reloj y el texto del tiempo restante */
+#pantalla6 .titulo-contador {
+    font-size: 10px !important;     /* Letra de máquina de escribir más fina */
+    letter-spacing: 1.5px !important;
+}
+
+#pantalla6 #contador {
+    font-size: 13.5px !important;   /* Números del reloj más compactos */
+    letter-spacing: 0.5px !important;
+}
+
+/* 3. Reduce y encajona la sugerencia de regalos "Muestra de Cariño" */
+#pantalla6 .sugerencia-regalos {
+    width: 75% !important;          /* Encoge todo el bloque hacia el centro rosa */
+    max-width: 240px !important;
+    margin: 15px auto 20px auto !important;
+}
+
+#pantalla6 .sugerencia-regalos .titulo-regalos {
+    font-size: 10px !important;     /* Título más pequeño */
+    letter-spacing: 1.5px !important;
+}
+
+#pantalla6 .sugerencia-regalos .detalle-regalos {
+    font-size: 11px !important;     /* Texto de los juguetes más fino y elegante */
+    line-height: 1.35 !important;
+}
 
