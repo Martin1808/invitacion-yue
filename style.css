@@ -935,4 +935,14 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     object-position: center center !important;
 }
 
+/* ==========================================================================
+   🎯 CALIBRACIÓN EXCLUSIVA: BAJAR UN POCO LAS CARAS EN LA TARJETA 3
+   ========================================================================== */
+#pantalla3 img.foto-festejada,
+#pantalla3 .foto-festejada {
+    /* ✨ SOLUCIÓN: Cambiamos de 12% a 35% para deslizar la foto hacia abajo y centrar los rostros */
+    object-position: center 35% !important;
+}
+
+
 
