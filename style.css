@@ -843,4 +843,24 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
 }
 
 
+/* ==========================================================================
+   🎯 AJUSTE DE PORTADA: MINIATURIZAR EL LETRERO "MI PRESENTACIÓN"
+   ========================================================================== */
+#pantalla1 h2,
+.contenido-portada h2 {
+    font-family: 'Courier Prime', 'Courier New', monospace !important; /* Fuente estilo máquina */
+    font-size: 11px !important;       /* ✨ SOLUCIÓN: Letra miniatura súper elegante */
+    font-weight: normal !important;   /* Trazo delgado, elimina el sombreado grueso */
+    text-transform: uppercase !important; /* Forza de forma automática a MAYÚSCULAS */
+    letter-spacing: 4px !important;    /* Espaciado fino entre cada letra */
+    color: #ffffff !important;
+    text-shadow: none !important;
+    
+    margin-top: 25px !important;       /* Espacio de aire debajo de la foto circular */
+    margin-bottom: 15px !important;    /* Separación fina con el nombre Yue Regina */
+    display: block !important;
+    width: 100% !important;
+}
+
+
 
