@@ -953,9 +953,10 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
 
 
 /* ==========================================================================
-   🎯 REENCUADRE DE PORTADA: SUBIR ENFOQUE PARA CUERPO COMPLETO (PANTALLA 1)
+   🎯 CALIBRACIÓN DE PORTADA: ENCUADRE PERFECTO DE CARITA Y VESTIDO
    ========================================================================== */
 #pantalla1 .marco-foto-portada .foto-festejada {
-    /* ✨ SOLUCIÓN: Ancla la foto a la base para que el encuadre suba y muestre las piernas y el vestido entero */
-    object-position: center bottom !important;
+    /* ✨ SOLUCIÓN: Ajuste fino al 40% para bajar el rostro de la orilla y revelar el vestido completo */
+    object-position: center 40% !important;
 }
+
