@@ -937,5 +937,18 @@ color: #ffffff !important;margin: 0 0 4px 0 !important;font-weight: bold !import
     transform: translateY(22px) !important; 
 }
 
+/* ==========================================================================
+   🎯 ENCUADRE DE NUEVA FOTO FAMILIAR DE PIE (PANTALLA 3)
+   ========================================================================== */
+#pantalla3 .foto-festejada {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    
+    /* ✨ SOLUCIÓN: Centra la foto de cuerpo entero en ambos ejes eliminando el hueco de arriba */
+    object-position: center center !important; 
+    transform: none !important; /* Quita por completo el empuje hacia abajo que arrastraba la foto vieja */
+}
 
 
